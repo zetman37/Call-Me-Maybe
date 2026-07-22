@@ -1,8 +1,12 @@
 from __future__ import annotations
+
 import argparse
 import sys
 from pathlib import Path
 from typing import List
+
+import torch
+
 from src.io_utils import parse_list_of_models, read_json_file, write_results
 from src.models import DecodingConfig, FunctionDefinition, PromptItem
 from src.pipeline import process_prompts
@@ -32,6 +36,7 @@ def parse_args(argv: List[str]) -> argparse.Namespace:
 
 
 def main(argv: List[str] | None = None) -> int:
+    torch.set_num_threads(2)
     args = parse_args(argv or sys.argv[1:])
 
     try:
