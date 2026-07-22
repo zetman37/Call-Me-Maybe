@@ -1,4 +1,4 @@
-project]
+[project]
 name = "call-me-maybe"
 version = "0.1.0"
 description = "Function calling with constrained decoding using a small LLM"
