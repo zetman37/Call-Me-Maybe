@@ -28,7 +28,7 @@ def parse_args(argv: List[str]) -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/output/function_calling_results.json"),
+        default=Path("data/output/function_calls.json"),
     )
     parser.add_argument("--max_new_tokens", type=int, default=64)
     return parser.parse_args(argv)
